@@ -2,6 +2,7 @@
 import numpy as np
 import random
 from matplotlib import pyplot as plt
+from sklearn.linear_model import LinearRegression
 
 
 
@@ -23,6 +24,15 @@ def classic_olsr(x,y):
 	b = y_avg - w * x_avg
 	return (w,b)
 
+def call_sklearn(x,y):
+	lr = LinearRegression()
+	x_ = np.matrix(x).T
+	y_ = np.matrix(y).T
+	print x_.shape,y_.shape
+	lr.fit(x_,y_)
+	print (lr.coef_,lr.intercept_)
+	return (lr.coef_[0,0],lr.intercept_[0])
+
 '''
 visualization
 '''
@@ -36,7 +46,8 @@ x = [x_i * random.randrange(8,12)/10 for x_i in range(500)]
 y = [y_i * random.randrange(8,12)/10 for y_i in range(100,600)]
 
 # w,b = matrix_olsr(x,y)
-w,b = classic_olsr(x,y)
+# w,b = classic_olsr(x,y)
+w,b = call_sklearn(x,y)
 
 line_x = [round(min(x))-1, round(max(x))+1]
 line_y = [w*x_i + b for x_i in line_x]
