@@ -141,7 +141,7 @@ GBDT的主要缺点有：
 
 ## 参考文献
 
-【1】 刘建平 [[梯度提升树(GBDT)原理小结](http://www.cnblogs.com/pinard/p/6140514.html)](http://www.cnblogs.com/pinard/p/6133937.html)
+【1】 刘建平 [梯度提升树(GBDT)原理小结](http://www.cnblogs.com/pinard/p/6133937.html)
 
 【2】李航 《统计学习方法》
 
